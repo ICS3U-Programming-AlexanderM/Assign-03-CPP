@@ -32,7 +32,7 @@ void input() {
     // input
     std::cout << "What is your current yearly salary: $";
     std::cin >> salaryString;
-    // process & output
+    // error checking
     try {
         salary = std::stoi(salaryString);
     } catch (std::invalid_argument) {
@@ -41,7 +41,7 @@ void input() {
     }
     std::cout << "Enter your current years of service: ";
     std::cin >> yearsString;
-    // process & output
+    // error checking
     try {
         years = std::stoi(yearsString);
     } catch (std::invalid_argument) {
