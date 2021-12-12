@@ -17,10 +17,10 @@ const char YES = 'y';
 
 
 // declare variables
-float salary;
+int extraYears;
 int years;
 float salaryExtra;
-int extraYears;
+float salary;
 char answer;
 
 
@@ -65,6 +65,7 @@ void moreYears() {
 
 
 int main() {
+    // loop
     do {
     // input
     input();
