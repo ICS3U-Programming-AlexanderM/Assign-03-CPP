@@ -8,6 +8,7 @@
 // If the user gets a bonus, the program will calculate the bonus.
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 
 // set constants
@@ -25,11 +26,28 @@ char answer;
 
 
 void input() {
+    // variables
+    std::string salaryString;
+    std::string yearsString;
     // input
     std::cout << "What is your current yearly salary: $";
-    std::cin >> salary;
+    std::cin >> salaryString;
+    // process & output
+    try {
+        salary = std::stoi(salaryString);
+    } catch (std::invalid_argument) {
+        std::cout << "Must be a number \n";
+        return input();
+    }
     std::cout << "Enter your current years of service: ";
-    std::cin >> years;
+    std::cin >> yearsString;
+    // process & output
+    try {
+        years = std::stoi(yearsString);
+    } catch (std::invalid_argument) {
+        std::cout << "Must be a number \n";
+        return input();
+    }
     std::cout << "" << std::endl;
 }
 
