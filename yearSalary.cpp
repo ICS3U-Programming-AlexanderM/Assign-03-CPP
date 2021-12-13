@@ -26,10 +26,10 @@ char answer;
 
 
 void input() {
-    // variables
+    // declare variables
     std::string salaryString;
     std::string yearsString;
-    // input
+    // get user input
     std::cout << "What is your current yearly salary: $";
     std::getline(std::cin, salaryString);
     // error checking
@@ -53,11 +53,11 @@ void input() {
 
 
 void calculate() {
-    // process
+    // calculate bonus and new salary
     salaryExtra = salary * INCREASE;
     salary = salary + salaryExtra;
 
-    // output
+    // display bonus and new salary to user
     std::cout << "Your bonus is $" << std::fixed << std::setprecision(2)
     << salaryExtra << ".\n";
     std::cout << "Your new salary is $" << std::fixed << std::setprecision(2)
@@ -67,10 +67,10 @@ void calculate() {
 
 
 void moreYears() {
-    // process
+    // calculate how many more years are needed
     extraYears = SERVICE + 1 - years;
 
-    // output
+    // display how many more years are needed to user
     std::cout << "You do not have enough years of service";
     std::cout << " to receive a bonus.\n";
 
@@ -85,10 +85,10 @@ void moreYears() {
 int main() {
     // loop
     do {
-    // input
+    // get user input
     input();
 
-    // process
+    // determine if the user can recive a bonus
     if (years > SERVICE) {
         calculate();
     } else {
