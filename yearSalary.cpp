@@ -34,7 +34,7 @@ void input() {
     std::getline(std::cin, salaryString);
     // error checking
     try {
-        salary = std::stoi(salaryString);
+        salary = std::stof(salaryString);
     } catch (std::invalid_argument) {
         std::cout << "Must be a number \n";
         return input();
