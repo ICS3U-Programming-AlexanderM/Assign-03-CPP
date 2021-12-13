@@ -9,6 +9,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <limits>
 
 
 // set constants
@@ -31,7 +32,7 @@ void input() {
     std::string yearsString;
     // input
     std::cout << "What is your current yearly salary: $";
-    std::cin >> salaryString;
+    std::getline(std::cin, salaryString);
     // error checking
     try {
         salary = std::stoi(salaryString);
@@ -40,12 +41,12 @@ void input() {
         return input();
     }
     std::cout << "Enter your current years of service: ";
-    std::cin >> yearsString;
+    std::getline(std::cin, yearsString);
     // error checking
     try {
         years = std::stoi(yearsString);
     } catch (std::invalid_argument) {
-        std::cout << "Must be a number \n";
+        std::cout << "Must be an integer \n";
         return input();
     }
     std::cout << "" << std::endl;
@@ -99,6 +100,9 @@ int main() {
     std::cout << "Is there someone else who would like to try? (y/n) ";
     std::cin >> answer;
     std::cout << "\n";
+    // clear all inputs
+    std::cin.clear();
+    std::cin.ignore(100 , '\n');
        } while (answer == YES);
     // end
     std::cout << "Goodbye.";
