@@ -54,8 +54,8 @@ void input() {
 
 void calculate() {
     // calculate bonus and new salary
-    salaryExtra = salary * INCREASE;
-    salary = salary + salaryExtra;
+    salaryExtra = salary * INCREASE + 0.005;
+    salary = salary + salaryExtra + 0.005;
 
     // display bonus and new salary to user
     std::cout << "Your bonus is $" << std::fixed << std::setprecision(2)
